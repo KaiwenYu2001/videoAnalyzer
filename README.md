@@ -32,3 +32,5 @@ cd ZLMediaKit/release/linux/Debug
 * 算法模块 `python ./Algorithm/AlgorithmApiServer.py`\
 `port=9003`: 算法运行地址。
 
+## Week 6 summary
+
