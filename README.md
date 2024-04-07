@@ -34,3 +34,7 @@ cd ZLMediaKit/release/linux/Debug
 
 ## Week 6 summary
 
+**建立http-flv视频推流的方式：**
+
+1. 运行ZLM服务，需要在运行ffmpeg推流命令前启动，否则会占用554端口。启动ZLM后会自动响应前端请求，生成相应格式的视频流。
+2. 访问http-flv视频流的地址：`http://127.0.0.1:80/live/test.live.flv`
