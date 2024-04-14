@@ -1,6 +1,6 @@
 import json
 import os
-from framework.settings import BASE_DIR
+from admin.settings import BASE_DIR
 class Config:
     def __init__(self):
         pass
