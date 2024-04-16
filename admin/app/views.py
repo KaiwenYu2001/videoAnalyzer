@@ -4,6 +4,7 @@ from app.utils.Config import Config
 from app.utils.ZLMediaKit import ZLMediaKit
 import json
 from app.utils.DjangoSql import DjangoSql
+from app.utils.OSInfo import OSInfo
 
 g_config = Config()
 g_media = ZLMediaKit(config=g_config)
@@ -22,6 +23,9 @@ def web_streams(request):
 def web_player(request):
     return render(request, "app/web_player.html")
 
+def web_index(request):
+    return render(request, "app/web_index.html")
+
 def myplayer(request):
     return render(request, "app/myplayer.html")
 
@@ -34,29 +38,16 @@ def api_getStreams(request):
 
     try:
         streams = g_media.getMediaList()
+        # print(streams)
         mediaServerState = g_media.mediaServerState
 
-        streams_in_camera_dict ={}
-        cameras = g_djangoSql.select("select * from av_camera")
-        cameras_dict = {}
-        # 摄像头按照code生成字典
-        for camera in cameras:
-            push_stream_app = camera.get("push_stream_app")
-            push_stream_name = camera.get("push_stream_name")
-            code = "%s_%s" % (push_stream_app, push_stream_name)
-            cameras_dict[code] = camera
-
-        # 将所有在线的视频流分为用户推流的和摄像头推流的
+        # Get all user push streams
         for stream in streams:
-            stream_code = stream.get("code")
-            if cameras_dict.get(stream_code):
-                # 摄像头推流
-                streams_in_camera_dict[stream_code] = stream
-            else:
-                # 用户推流
-                stream["ori"] = "推流"
-                data.append(stream)
-
+            # stream_code = stream.get("code")
+            stream["ori"] = "推流"
+            data.append(stream)
+        print(f">>>{data}")
+        '''
         # 处理所有的摄像头，如果摄像头出现在在线视频流字典中，则更新到对应视频流的状态中
         for camera in cameras:
             push_stream_app = camera.get("push_stream_app")
@@ -83,7 +74,7 @@ def api_getStreams(request):
                 "ori": camera.get("name")
             }
             data.append(stream)
-
+        '''
         code = 1000
         msg = "success"
 
@@ -115,3 +106,34 @@ def HttpResponseJson(res):
             raise TypeError
 
     return HttpResponse(json.dumps(res, default=json_dumps_default), content_type="application/json")
+
+
+def api_getIndex(request):
+    # highcharts 例子 https://www.highcharts.com.cn/demo/highcharts/dynamic-update
+    code = 0
+    msg = "error"
+    os_info = {}
+
+    try:
+
+        osSystem = OSInfo()
+        os_info = osSystem.info()
+        code = 1000
+        msg = "success"
+
+    except Exception as e:
+        msg = str(e)
+
+    res = {
+        "code":code,
+        "msg":msg,
+        "os_info":os_info
+    }
+    
+    return HttpResponseJson(res)
+
+
+
+if __name__ == '__main__':
+    streams = g_media.getMediaList()
+    print(streams)

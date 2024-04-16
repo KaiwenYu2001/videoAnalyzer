@@ -93,14 +93,13 @@ class ZLMediaKit():
                 host=self.__config.mediaHttpHost,
                 secret=self.__config.mediaSecret
             )
+            
             res = requests.get(url,headers={
                     "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57"
             },timeout=self.timeout)
 
-
             if 200 == res.status_code:
                 res_json = res.json()
-
                 if 0 == res_json["code"]:
                     data = res_json.get("data")
                     if data:
@@ -188,3 +187,13 @@ class ZLMediaKit():
             print("getMediaList() error: %s"%(str(e)))
 
         return __data
+    
+
+# if __name__ == '__main__':
+#     from Config import Config
+
+
+#     g_config = Config()
+#     g_media = ZLMediaKit()
+#     streams = g_media.getMediaList()
+#     print(streams)
