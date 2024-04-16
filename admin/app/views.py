@@ -46,7 +46,7 @@ def api_getStreams(request):
             # stream_code = stream.get("code")
             stream["ori"] = "推流"
             data.append(stream)
-        print(f">>>{data}")
+        # print(f">>>{data}")
         '''
         # 处理所有的摄像头，如果摄像头出现在在线视频流字典中，则更新到对应视频流的状态中
         for camera in cameras:
