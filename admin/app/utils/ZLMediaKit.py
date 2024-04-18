@@ -88,12 +88,10 @@ class ZLMediaKit():
     def getMediaList(self):
         __data = []
         try:
-
             url = "{host}/index/api/getMediaList?secret={secret}".format(
                 host=self.__config.mediaHttpHost,
                 secret=self.__config.mediaSecret
             )
-            
             res = requests.get(url,headers={
                     "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57"
             },timeout=self.timeout)

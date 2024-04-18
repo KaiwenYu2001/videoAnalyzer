@@ -1,0 +1,448 @@
+2024-04-17 00:14:34.665 D [MediaServer] [88520-event poller 0] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:36.525 D [MediaServer] [88520-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:37.186 D [MediaServer] [88520-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:41.230 I [MediaServer] [88520-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:hls://__defaultVhost__/live/test
+2024-04-17 00:14:41.230 I [MediaServer] [88520-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:ts://__defaultVhost__/live/test
+2024-04-17 00:14:41.230 I [MediaServer] [88520-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:rtmp://__defaultVhost__/live/test
+2024-04-17 00:14:41.230 I [MediaServer] [88520-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:fmp4://__defaultVhost__/live/test
+2024-04-17 00:14:41.231 I [MediaServer] [88520-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:rtsp://__defaultVhost__/live/test
+2024-04-17 00:14:41.231 W [MediaServer] [88520-event poller 0] RtspSession.cpp:64 onError | 1-44(127.0.0.1:64766) RTSP推流器(__defaultVhost__/live/test)断开:recv teardown request,耗时(s):10283
+2024-04-17 00:14:43.607 D [MediaServer] [88520-event poller 1] MediaSink.cpp:150 emitAllTrackReady | All track ready use 1ms
+2024-04-17 00:14:43.607 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注册:fmp4://__defaultVhost__/live/test
+2024-04-17 00:14:43.607 I [MediaServer] [88520-event poller 1] MultiMediaSourceMuxer.cpp:444 onAllTrackReady | stream: rtsp://127.0.0.1:554/live/test , codec info: mpeg4-generic[8000/1/16] H264[1920/1080/30] 
+2024-04-17 00:14:43.607 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注册:rtmp://__defaultVhost__/live/test
+2024-04-17 00:14:43.607 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注册:ts://__defaultVhost__/live/test
+2024-04-17 00:14:43.607 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注册:rtsp://__defaultVhost__/live/test
+2024-04-17 00:14:45.062 D [MediaServer] [88520-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:45.763 D [MediaServer] [88520-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:46.111 D [MediaServer] [88520-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:46.548 D [MediaServer] [88520-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:46.999 D [MediaServer] [88520-event poller 2] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:47.321 D [MediaServer] [88520-event poller 2] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:14:47.413 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注册:hls://__defaultVhost__/live/test
+2024-04-17 00:14:53.634 W [MediaServer] [88520-event poller 1] RtspSession.cpp:64 onError | 5-44(127.0.0.1:63358) RTSP推流器(__defaultVhost__/live/test)断开:end of file,耗时(s):10
+2024-04-17 00:15:06.279 I [MediaServer] [62072-7968903168] System.cpp:177 systemSetup | core文件大小设置为:9223372036854775807
+2024-04-17 00:15:06.279 I [MediaServer] [62072-7968903168] System.cpp:186 systemSetup | 文件最大描述符个数设置为:9223372036854775807
+2024-04-17 00:15:06.279 I [MediaServer] [62072-7968903168] main.cpp:261 start_main | ZLMediaKit(git hash:/,branch:,build time:2024-04-16T14:12:02)
+2024-04-17 00:15:06.305 W [MediaServer] [62072-7968903168] SSLUtil.cpp:100 loadPublicKey | BIO_new_file failed: error:80000002:system library::No such file or directory
+2024-04-17 00:15:06.305 W [MediaServer] [62072-7968903168] SSLUtil.cpp:128 loadPrivateKey | BIO_new_file failed: error:10000080:BIO routines::no such file
+2024-04-17 00:15:06.305 W [MediaServer] [62072-7968903168] SSLUtil.cpp:202 makeSSLContext | SSL_CTX_check_private_key failed: error:80000002:system library::No such file or directory
+2024-04-17 00:15:06.305 D [MediaServer] [62072-stamp thread] util.cpp:366 operator() | Stamp thread started
+2024-04-17 00:15:06.306 I [MediaServer] [62072-7968903168] EventPoller.cpp:470 EventPollerPool | EventPoller created size: 8
+2024-04-17 00:15:06.306 W [MediaServer] [62072-7968903168] sockutil.cpp:421 bind_sock6 | Bind socket failed: address already in use
+2024-04-17 00:15:06.306 E [MediaServer] [62072-7968903168] main.cpp:399 start_main | Start server failed: Listen on :: 554 failed: address already in use
+2024-04-17 00:15:07.311 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x126740fa0
+2024-04-17 00:15:07.312 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x126740d70
+2024-04-17 00:15:07.312 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x126738b80
+2024-04-17 00:15:07.312 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x126738950
+2024-04-17 00:15:07.312 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x12660bdc0
+2024-04-17 00:15:07.312 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x127b08060
+2024-04-17 00:15:07.312 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x12660b120
+2024-04-17 00:15:07.312 I [MediaServer] [62072-7968903168] EventPoller.cpp:98 ~EventPoller | 0x12660b670
+2024-04-17 00:15:07.317 I [MediaServer] [62072-7968903168] logger.cpp:86 ~Logger | 
+2024-04-17 00:15:08.637 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注销:hls://__defaultVhost__/live/test
+2024-04-17 00:15:08.638 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注销:ts://__defaultVhost__/live/test
+2024-04-17 00:15:08.639 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注销:rtmp://__defaultVhost__/live/test
+2024-04-17 00:15:08.639 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注销:fmp4://__defaultVhost__/live/test
+2024-04-17 00:15:08.639 I [MediaServer] [88520-event poller 1] MediaSource.cpp:503 emitEvent | 媒体注销:rtsp://__defaultVhost__/live/test
+2024-04-17 00:15:27.048 W [MediaServer] [88520-7968903168] main.cpp:424 operator() | SIGTERM:exit
+2024-04-17 00:15:27.048 I [MediaServer] [88520-7968903168] UdpServer.cpp:61 ~UdpServer | Close udp server [::]: 9000
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 10000
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] UdpServer.cpp:61 ~UdpServer | Close udp server [::]: 10000
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 443
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 80
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 19350
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 1935
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 332
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 554
+2024-04-17 00:15:27.049 I [MediaServer] [88520-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 9000
+2024-04-17 00:15:27.050 I [MediaServer] [88520-7968903168] main.cpp:439 start_main | 程序退出中,请等待...
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] main.cpp:441 start_main | 程序退出完毕!
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x11360b690
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x1336068f0
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x11360b460
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x11360b230
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x114806260
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x1336066c0
+2024-04-17 00:15:28.051 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x133606490
+2024-04-17 00:15:28.052 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x133606260
+2024-04-17 00:15:28.052 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x13508fae0
+2024-04-17 00:15:28.052 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x13508f8b0
+2024-04-17 00:15:28.053 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x13504ac30
+2024-04-17 00:15:28.053 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x13504aa00
+2024-04-17 00:15:28.053 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x13508f5e0
+2024-04-17 00:15:28.053 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x135104840
+2024-04-17 00:15:28.053 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x135204080
+2024-04-17 00:15:28.053 I [MediaServer] [88520-7968903168] EventPoller.cpp:98 ~EventPoller | 0x135104610
+2024-04-17 00:15:28.059 I [MediaServer] [88520-7968903168] logger.cpp:86 ~Logger | 
+2024-04-17 00:15:34.448 I [MediaServer] [62311-7968903168] System.cpp:177 systemSetup | core文件大小设置为:9223372036854775807
+2024-04-17 00:15:34.448 I [MediaServer] [62311-7968903168] System.cpp:186 systemSetup | 文件最大描述符个数设置为:9223372036854775807
+2024-04-17 00:15:34.448 I [MediaServer] [62311-7968903168] main.cpp:261 start_main | ZLMediaKit(git hash:/,branch:,build time:2024-04-16T14:12:02)
+2024-04-17 00:15:34.462 W [MediaServer] [62311-7968903168] SSLUtil.cpp:100 loadPublicKey | BIO_new_file failed: error:80000002:system library::No such file or directory
+2024-04-17 00:15:34.462 W [MediaServer] [62311-7968903168] SSLUtil.cpp:128 loadPrivateKey | BIO_new_file failed: error:10000080:BIO routines::no such file
+2024-04-17 00:15:34.463 W [MediaServer] [62311-7968903168] SSLUtil.cpp:202 makeSSLContext | SSL_CTX_check_private_key failed: error:80000002:system library::No such file or directory
+2024-04-17 00:15:34.463 D [MediaServer] [62311-stamp thread] util.cpp:366 operator() | Stamp thread started
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] EventPoller.cpp:470 EventPollerPool | EventPoller created size: 8
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 554
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 332
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 1935
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 19350
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 80
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 443
+2024-04-17 00:15:34.463 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 9000
+2024-04-17 00:15:34.464 I [MediaServer] [62311-7968903168] TcpServer.cpp:214 start_l | TCP server listening on [::]: 10000
+2024-04-17 00:15:34.464 I [MediaServer] [62311-7968903168] UdpServer.cpp:108 start_l | UDP server bind to [::]: 10000
+2024-04-17 00:15:34.464 I [MediaServer] [62311-7968903168] UdpServer.cpp:108 start_l | UDP server bind to [::]: 9000
+2024-04-17 00:15:34.464 I [MediaServer] [62311-7968903168] main.cpp:411 start_main | 已启动http api 接口
+2024-04-17 00:15:34.464 I [MediaServer] [62311-7968903168] main.cpp:413 start_main | 已启动http hook 接口
+2024-04-17 00:15:46.740 D [MediaServer] [62311-event poller 0] MediaSink.cpp:150 emitAllTrackReady | All track ready use 2ms
+2024-04-17 00:15:46.740 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注册:fmp4://__defaultVhost__/live/test
+2024-04-17 00:15:46.740 I [MediaServer] [62311-event poller 0] MultiMediaSourceMuxer.cpp:444 onAllTrackReady | stream: rtsp://127.0.0.1:554/live/test , codec info: mpeg4-generic[8000/1/16] H264[1920/1080/30] 
+2024-04-17 00:15:46.740 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注册:rtmp://__defaultVhost__/live/test
+2024-04-17 00:15:46.740 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注册:ts://__defaultVhost__/live/test
+2024-04-17 00:15:46.740 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注册:rtsp://__defaultVhost__/live/test
+2024-04-17 00:15:49.350 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:15:50.546 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注册:hls://__defaultVhost__/live/test
+2024-04-17 00:15:50.556 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:15:50.970 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:15:51.216 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:15:51.380 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:15:51.552 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:15:51.713 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:15:51.861 D [MediaServer] [62311-event poller 1] WebApi.cpp:250 http api debug | 
+# request:
+GET /index/api/getMediaList?secret=e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws
+# header:
+Accept : */*
+Accept-Encoding : gzip, deflate, br
+Connection : keep-alive
+Host : 127.0.0.1
+User-Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.57
+# content:
+
+# response:
+{
+	"code" : -100,
+	"msg" : "secret\u9519\u8bef"
+}
+
+
+2024-04-17 00:16:26.885 I [MediaServer] [62724-7968903168] System.cpp:177 systemSetup | core文件大小设置为:9223372036854775807
+2024-04-17 00:16:26.885 I [MediaServer] [62724-7968903168] System.cpp:186 systemSetup | 文件最大描述符个数设置为:9223372036854775807
+2024-04-17 00:16:26.885 I [MediaServer] [62724-7968903168] main.cpp:261 start_main | ZLMediaKit(git hash:/,branch:,build time:2024-04-16T14:12:02)
+2024-04-17 00:16:26.900 W [MediaServer] [62724-7968903168] SSLUtil.cpp:100 loadPublicKey | BIO_new_file failed: error:80000002:system library::No such file or directory
+2024-04-17 00:16:26.900 W [MediaServer] [62724-7968903168] SSLUtil.cpp:128 loadPrivateKey | BIO_new_file failed: error:10000080:BIO routines::no such file
+2024-04-17 00:16:26.900 W [MediaServer] [62724-7968903168] SSLUtil.cpp:202 makeSSLContext | SSL_CTX_check_private_key failed: error:80000002:system library::No such file or directory
+2024-04-17 00:16:26.900 D [MediaServer] [62724-stamp thread] util.cpp:366 operator() | Stamp thread started
+2024-04-17 00:16:26.900 I [MediaServer] [62724-7968903168] EventPoller.cpp:470 EventPollerPool | EventPoller created size: 8
+2024-04-17 00:16:26.900 W [MediaServer] [62724-7968903168] sockutil.cpp:421 bind_sock6 | Bind socket failed: address already in use
+2024-04-17 00:16:26.900 E [MediaServer] [62724-7968903168] main.cpp:399 start_main | Start server failed: Listen on :: 554 failed: address already in use
+2024-04-17 00:16:27.906 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e90de0
+2024-04-17 00:16:27.907 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e90bb0
+2024-04-17 00:16:27.907 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e90980
+2024-04-17 00:16:27.907 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e90750
+2024-04-17 00:16:27.907 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e04b50
+2024-04-17 00:16:27.907 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e90480
+2024-04-17 00:16:27.907 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e90020
+2024-04-17 00:16:27.908 I [MediaServer] [62724-7968903168] EventPoller.cpp:98 ~EventPoller | 0x136e4bfc0
+2024-04-17 00:16:27.911 I [MediaServer] [62724-7968903168] logger.cpp:86 ~Logger | 
+2024-04-17 00:16:31.746 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:hls://__defaultVhost__/live/test
+2024-04-17 00:16:31.746 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:ts://__defaultVhost__/live/test
+2024-04-17 00:16:31.746 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:rtmp://__defaultVhost__/live/test
+2024-04-17 00:16:31.746 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:fmp4://__defaultVhost__/live/test
+2024-04-17 00:16:31.746 I [MediaServer] [62311-event poller 0] MediaSource.cpp:503 emitEvent | 媒体注销:rtsp://__defaultVhost__/live/test
+2024-04-17 00:16:31.746 W [MediaServer] [62311-event poller 0] RtspSession.cpp:64 onError | 1-44(127.0.0.1:63696) RTSP推流器(__defaultVhost__/live/test)断开:recv teardown request,耗时(s):45
+2024-04-17 00:17:11.342 W [MediaServer] [62311-7968903168] main.cpp:424 operator() | SIGTERM:exit
+2024-04-17 00:17:11.342 I [MediaServer] [62311-7968903168] UdpServer.cpp:61 ~UdpServer | Close udp server [::]: 9000
+2024-04-17 00:17:11.342 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 10000
+2024-04-17 00:17:11.342 I [MediaServer] [62311-7968903168] UdpServer.cpp:61 ~UdpServer | Close udp server [::]: 10000
+2024-04-17 00:17:11.343 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 443
+2024-04-17 00:17:11.343 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 80
+2024-04-17 00:17:11.343 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 19350
+2024-04-17 00:17:11.343 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 1935
+2024-04-17 00:17:11.343 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 332
+2024-04-17 00:17:11.343 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 554
+2024-04-17 00:17:11.344 I [MediaServer] [62311-7968903168] TcpServer.cpp:49 ~TcpServer | Close tcp server [::]: 9000
+2024-04-17 00:17:11.344 I [MediaServer] [62311-7968903168] main.cpp:439 start_main | 程序退出中,请等待...
+2024-04-17 00:17:12.345 I [MediaServer] [62311-7968903168] main.cpp:441 start_main | 程序退出完毕!
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x139e90e80
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x139e90c50
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x139e90a20
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x139e04cc0
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x139e90750
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x139e902f0
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x13b104080
+2024-04-17 00:17:12.346 I [MediaServer] [62311-7968903168] EventPoller.cpp:98 ~EventPoller | 0x139e4c190
+2024-04-17 00:17:12.352 I [MediaServer] [62311-7968903168] logger.cpp:86 ~Logger | 
