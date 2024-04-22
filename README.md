@@ -38,3 +38,9 @@ cd ZLMediaKit/release/linux/Debug
 
 1. 运行ZLM服务，需要在运行ffmpeg推流命令前启动，否则会占用554端口。启动ZLM后会自动响应前端请求，生成相应格式的视频流。
 2. 访问http-flv视频流的地址：`http://127.0.0.1:80/live/test.live.flv`
+
+
+## Week 5 report
+
+**Install cuda + cudnn + tensorrt and run test：**
+When I run make file for the `sample_onnx_mnist` smaple, I get the following result. (ref: https://blog.csdn.net/lu_linux/article/details/134193901)
