@@ -1,0 +1,186 @@
+Start testing: May 02 14:20 CST
+----------------------------------------------------------
+1/65 Testing: test-test-kq-collision
+1/65 Test: test-test-kq-collision
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-kq-collision"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-test-kq-collision" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+write_cb: write data to pipe successfully
+read_cb: read the expected data from pipe successfully
+<end of output>
+Test time =   6.21 sec
+----------------------------------------------------------
+Test Passed.
+"test-test-kq-collision" end time: May 02 14:20 CST
+"test-test-kq-collision" time elapsed: 00:00:06
+----------------------------------------------------------
+
+2/65 Testing: test-changelist__SELECT
+2/65 Test: test-changelist__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-changelist"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-changelist__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+write callback. should only see this once
+timeout fired, time to end test
+usec used=87, usec passed=1504300, cpu usage=0.01%
+<end of output>
+Test time =   1.78 sec
+----------------------------------------------------------
+Test Passed.
+"test-changelist__SELECT" end time: May 02 14:20 CST
+"test-changelist__SELECT" time elapsed: 00:00:01
+----------------------------------------------------------
+
+3/65 Testing: test-eof__SELECT
+3/65 Test: test-eof__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-eof"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-eof__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+read_cb: read 12
+read_cb: read 0 - means EOF
+<end of output>
+Test time =   0.30 sec
+----------------------------------------------------------
+Test Passed.
+"test-eof__SELECT" end time: May 02 14:20 CST
+"test-eof__SELECT" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/65 Testing: test-closed__SELECT
+4/65 Test: test-closed__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-closed"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-closed__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+[warn] event_base_new_with_config: no event mechanism available
+<end of output>
+Test time =   0.28 sec
+----------------------------------------------------------
+Test Passed.
+"test-closed__SELECT" end time: May 02 14:20 CST
+"test-closed__SELECT" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/65 Testing: test-fdleak__SELECT
+5/65 Test: test-fdleak__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-fdleak"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-fdleak__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.42 sec
+----------------------------------------------------------
+Test Passed.
+"test-fdleak__SELECT" end time: May 02 14:20 CST
+"test-fdleak__SELECT" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/65 Testing: test-init__SELECT
+6/65 Test: test-init__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-init"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-init__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.32 sec
+----------------------------------------------------------
+Test Passed.
+"test-init__SELECT" end time: May 02 14:20 CST
+"test-init__SELECT" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/65 Testing: test-time__SELECT
+7/65 Test: test-time__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-time"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-time__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+event_base_dispatch=1, called=208987, EVENT=20000
+<end of output>
+Test time =   1.28 sec
+----------------------------------------------------------
+Test Passed.
+"test-time__SELECT" end time: May 02 14:20 CST
+"test-time__SELECT" time elapsed: 00:00:01
+----------------------------------------------------------
+
+8/65 Testing: test-weof__SELECT
+8/65 Test: test-weof__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-weof"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-weof__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+write_cb: write 12
+write_cb: write -1
+<end of output>
+Test time =   0.29 sec
+----------------------------------------------------------
+Test Passed.
+"test-weof__SELECT" end time: May 02 14:20 CST
+"test-weof__SELECT" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/65 Testing: test-dumpevents__SELECT
+9/65 Test: test-dumpevents__SELECT
+Command: "/Users/kevinyu/Desktop/libevent_test/libevent-master/build/bin/test-dumpevents" "|" "/opt/homebrew/bin/python3" "/Users/kevinyu/Desktop/libevent_test/libevent-master/test/check-dumpevents.py"
+Directory: /Users/kevinyu/Desktop/libevent_test/libevent-master/build
+"test-dumpevents__SELECT" start time: May 02 14:20 CST
+Output:
+----------------------------------------------------------
+=====expected
+Now= 1714630812.597945
+Inserted:
+  0x6000003a4100 [fd  3] Write
+  0x6000003a4180 [fd  4] Read Persist Timeout=T+1
+  0x6000003a4200 [fd  5] Write Persist Timeout=T+1
+  0x6000003a4280 [fd  6] Read Timeout=T+2.5
+  0x6000003a4300 [fd  -1] Timeout=T+1
+  0x6000003a4380 [fd  -1] Timeout=T+1
+  0x6000003a4400 [fd  -1] Timeout=T+1
+  0x6000003a4480 [fd  -1] Persist Timeout=T+2.5
+  0x6000003a4500 [fd  -1] Persist Timeout=T+1
+  0x6000003a4580 [fd  -1] Persist Timeout=T+2.5
+  0x6000003a4700 [sig 2] Signal Persist
+Active:
+  0x6000003a4600 [fd  -1, priority=0] Read active
+  0x6000003a4680 [fd  -1, priority=0] Read Write Timeout active
+  0x6000003a4180 [fd  4, priority=0] Read active
+======received
+Inserted events:
+  0x6000003a4100 [fd  3] Write
+  0x6000003a4180 [fd  4] Read Persist Timeout=1714630813.597937
+  0x6000003a4200 [fd  5] Write Persist Timeout=1714630813.597938
+  0x6000003a4280 [fd  6] Read Timeout=1714630815.097938
+  0x151604808 [fd  7] Read Persist Internal
+  0x6000003a4700 [sig 2] Signal Persist
+  0x600001ca4020 [fd  -1] Internal Timeout=1714630813.597938
+  0x600001ca40c0 [fd  -1] Internal Timeout=1714630815.097938
+  0x6000003a4400 [fd  -1] Timeout=1714630813.597939
+  0x6000003a4580 [fd  -1] Persist Timeout=1714630815.097939
+  0x6000003a4300 [fd  -1] Timeout=1714630813.597938
+  0x6000003a4380 [fd  -1] Timeout=1714630813.597939
+  0x6000003a4500 [fd  -1] Persist Timeout=1714630813.597939
+  0x6000003a4480 [fd  -1] Persist Timeout=1714630815.097939
+Active events:
+  0x6000003a4180 [fd  4, priority=0] Read active
+  0x6000003a4600 [fd  -1, priority=0] Read active
+  0x6000003a4680 [fd  -1, priority=0] Read Write Timeout active
+<end of output>
+Test time =   0.28 sec
+----------------------------------------------------------
+Test Passed.
+"test-dumpevents__SELECT" end time: May 02 14:20 CST
+"test-dumpevents__SELECT" time elapsed: 00:00:00
+----------------------------------------------------------
+

@@ -40,7 +40,24 @@ cd ZLMediaKit/release/linux/Debug
 2. 访问http-flv视频流的地址：`http://127.0.0.1:80/live/test.live.flv`
 
 
-## Week 5 report
+## Week 7 report
 
 **Install cuda + cudnn + tensorrt and run test：**
 When I run make file for the `sample_onnx_mnist` smaple, I get the following result. (ref: https://blog.csdn.net/lu_linux/article/details/134193901)
+
+
+## Week 8 summary
+完成yolov8的tensorrt部署，学习C++协程、调度器，用于启动后台算法。 
+
+C++创建多线程：
+```
+# include<thread>
+
+int main(){
+    std::thread t(func);
+    t.join();
+    return 0;
+}
+```
+
+多线程任务调度器
