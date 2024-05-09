@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
 from app.utils.Config import Config
 from app.utils.ZLMediaKit import ZLMediaKit
 from app.utils.Analyzer import Analyzer
@@ -104,98 +105,26 @@ def api_getIndex(request):
 
 
 def api_runAlgorithm(request): # 对应BXC-api.py-api_getControls()
-    res = requests.post(url='%s/test' % 'http://127.0.0.1:8001', headers=None,
-                                data=None, timeout=10)  # test
-    
-    res = {
-        "code":1,
-        "msg":'msg'
-    }
-    return HttpResponseJson(res)
-
-    code = 0
-    msg = "error"
-    mediaServerState = False
-    ananyServerState = False
-
-    atDBControls = [] #数据库中存储的布控数据
-
+    param1 = request.GET.get('param1')
     try:
-        __online_streams_dict = {}  #在线的视频流
-        __online_controls_dict = {} #在线的布控数据
-
-        __streams = g_media.getMediaList()
-        mediaServerState = g_media.mediaServerState
-        for d in __streams:
-            if d.get("active"):
-                __online_streams_dict[d.get("code")] = d
-
-        if mediaServerState:
-            __state, __msg, __controls = g_analyzer.controls()
-            ananyServerState = g_analyzer.analyzerServerState
-            for d in __controls:
-                __online_controls_dict[d.get("code")] = d
-
-
-        sql = "select ac.*,ab.name as algorithm_name from av_control ac left join av_algorithm as ab on ac.algorithm_code=ab.code order by ac.id desc"
-        atDBControls = g_djangoSql.select(sql) #数据库中存储的布控数据
-        atDBControlCodeSet = set() # 数据库中所有布控code的set
-
-        for atDBControl in atDBControls:
-            atDBControlCodeSet.add(atDBControl.get("code"))
-
-            atDBControl_stream_code = "%s_%s"%(atDBControl["stream_app"],atDBControl["stream_name"])
-            atDBControl["create_time"] = atDBControl["create_time"].strftime("%Y-%m-%d %H:%M")
-
-            if __online_streams_dict.get(atDBControl_stream_code):
-                atDBControl["stream_active"] = True # 当前视频流在线
-            else:
-                atDBControl["stream_active"] = False # 当前视频流不在线
-
-            __online_control = __online_controls_dict.get(atDBControl["code"])
-            atDBControl["checkFps"] = "0"
-
-            if __online_control:
-                atDBControl["cur_state"] = 1 # 布控中
-                atDBControl["checkFps"] = "%.2f"%float(__online_control.get("checkFps"))
-            else:
-                if 0 == int(atDBControl.get("state")):
-                    atDBControl["cur_state"] = 0 # 未布控
-                else:
-                    atDBControl["cur_state"] = 5 # 布控中断
-
-            if atDBControl.get("state") != atDBControl.get("cur_state"):
-                # 数据表中的布控状态和最新布控状态不一致，需要更新至最新状态
-                update_state_sql = "update av_control set state=%d where id=%d " % (atDBControl.get("cur_state"), atDBControl.get("id"))
-                g_djangoSql.execute(update_state_sql)
-
-        for code,control in __online_controls_dict.items():
-            if code not in atDBControlCodeSet:
-                # 布控数据在运行中，但却不存在本地数据表中，该数据为失控数据，需要关闭其运行状态
-                print("api_getControls() 当前布控数据还在运行在，但却不存在本地数据表中，已启动停止布控",code,control)
-                g_analyzer.control_cancel(code=code)
-
-        code = 1000
-        msg = "success"
+        headers = {
+                "Content-Type": "application/json;"
+            }
+        data = {
+            'param1': param1,  # Stream URL
+        }
+        res = requests.post(url='%s/test' % 'http://127.0.0.1:8001', headers=headers, data=data, timeout=10)  # test
+        if res.status_code:
+            res_txt = res.text
+            res_result = json.loads(res_txt)
+        else:
+            __msg = "status_code=%d " % (res.status_code)
     except Exception as e:
-        msg = str(e)
-
-    if mediaServerState and ananyServerState:
-        serverState = "<span style='color:green;font-size:14px;'>流媒体运行中，视频分析器运行中</span>"
-    elif mediaServerState and not ananyServerState:
-        serverState = "<span style='color:green;font-size:14px;'>流媒体运行中</span> <span style='color:red;font-size:14px;'>视频分析器未运行<span>"
-    else:
-        serverState = "<span style='color:red;font-size:14px;'>流媒体未运行，视频分析器未运行<span>"
-
-    res = {
-        "code":code,
-        "msg":msg,
-        "ananyServerState":ananyServerState,
-        "mediaServerState":mediaServerState,
-        "serverState":serverState,
-        "data":atDBControls
-    }
-    return HttpResponseJson(res)
+        __msg = str(e)
+        return HttpResponseJson(__msg)
+    res_json = HttpResponseJson(res_result)
+    print(res_result)
+    return res_json
 
 
 if __name__ == '__main__':

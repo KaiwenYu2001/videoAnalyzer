@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/kevinyu/Desktop/graduationProject/videoAnalyzer_git/analyzer/libevent-master/include -I/Users/kevinyu/Desktop/graduationProject/videoAnalyzer_git/analyzer/libevent-master/build/include
+CXX_INCLUDES = -I/Users/kevinyu/Desktop/graduationProject/videoAnalyzer_git/analyzer/thirdParty/libevent-master/include -I/Users/kevinyu/Desktop/graduationProject/videoAnalyzer_git/analyzer/thirdParty/libevent-master/build/include -I/Users/kevinyu/Desktop/graduationProject/videoAnalyzer_git/analyzer/thirdParty/jsoncpp/1.9.5/include
 
 CXX_FLAGSarm64 = -g -std=gnu++11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
 
