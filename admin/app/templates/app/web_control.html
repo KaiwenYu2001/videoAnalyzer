@@ -19,13 +19,12 @@
             <span id="top_loading" ><img class="top_loading_img" src="/static/images/load.gif" alt="loading">加载中</span>
             <span id="top_msg"></span>
           </h2>
-
-        <div class="pull-right" >
-          <button type="button" onclick="reload()"  class="btn btn-success btn-sm">刷新</button>
-        </div>
-
-        <div class="pull-right" >
+        
+          <div class="pull-right">
             <button type="button" onclick="loadAlgorithm()"  class="btn btn-success btn-sm">加载算法</button>
+          </div>
+          <div class="pull-right">
+            <input type="text" id="algorithmInput" class="form-control" placeholder="输入媒体地址"></input>
           </div>
 
           <div class="clearfix"></div>
@@ -40,12 +39,10 @@
                 <tr class="headings">
                   <th class="column-title"># </th>
                   <th class="column-title">来源 </th>
-                  <th class="column-title">视频流 </th>
+                  <th class="column-title">算法地址 </th>
                   <th class="column-title">状态 </th>
-                  <th class="column-title">在线人数 </th>
-                  <th class="column-title">入口带宽 </th>
-                  <th class="column-title">视频信息 </th>
-                  <th class="column-title">音频信息 </th>
+                  <th class="column-title">拉流地址 </th>
+                  <th class="column-title">推流地址 </th>
                   <th class="column-title last"><span class="nobr">操作</span>
                   </th>
                 </tr>
@@ -69,7 +66,6 @@
   {{ block.super }}
 
 <script>
-
     let eleData = $("#data");
     let ele_top_loading = $("#top_loading");
     let ele_top_msg= $("#top_msg");
@@ -78,75 +74,17 @@
         window.location.reload();
     }
     
-    function getData() {
-        ele_top_loading.show();
-        $.ajax({
-               url: '/api/getStreams',
-               type: "get",
-               async: true,
-               data: {},
-               dataType: "json",
-               timeout: 0,
-               error: function () {
-                   ele_top_loading.hide();
-                   myAlert("网络异常，请确定网络正常！","error",3000);
-               },
-               success: function (res) {
-                   ele_top_loading.hide();
-                   let medisServerState = res.medisServerState;
-                   let mediaServerState_msg = res.mediaServerState_msg;
-
-                   ele_top_msg.html(mediaServerState_msg);
-
-                   if(1000 === res.code){
-                       eleData.html("");
-                       let data = res.data;
-                       let data_length = data.length;
-
-                       let item_html = "";
-
-                       if(0===data_length){
-                          item_html += "<tr class=\"even pointer\"><td colspan='9'>暂无数据</td></tr>";
-                       }
-                       else{
-                            for (let i = 0; i < data_length; i++) {
-                               let d = data[i];
-                               item_html += "<tr class=\"even pointer\">";
-                               item_html += "<td>"+i.toString()+"</td>";
-                               item_html += "<td>"+d["ori"]+"</td>";
-                               item_html += "<td>"+d["app"]+"/"+d["name"]+"</td>";
-                               if(d["active"]){
-                                   item_html += "<td><span class='sun-state-success'>在线</span></td>";
-                               }else{
-                                   item_html += "<td><span class='sun-state-error'>离线</span></td>";
-                                }
-                               item_html += "<td>"+d["clients"]+"</td>";
-                               item_html += "<td>"+d["produce_speed"]+"</td>";
-                               item_html += "<td>"+d["video"]+"</td>";
-                               item_html += "<td>"+d["audio"]+"</td>";
-                               item_html += "<td><a class='sun-a-label'  href=\"/player?app="+d["app"]+"&name="+d["name"]+"\" >预览</a></td>";
-                               item_html += "</tr>";
-                           }
-                        }
-                        eleData.append(item_html);
-
-                        //setTimeout(function () {getData();}, 6000);
-
-                   }else{
-                        myAlert(res.msg,"error",6000);
-                   }
-               }
-            });
-
-    }
 
     function loadAlgorithm() {
         ele_top_loading.show();
+        var inputElement = document.getElementById('algorithmInput');
+        var inputValue = inputElement.value;
+        console.log(inputValue);
         $.ajax({
             url: 'api/runAlgorithm',
             type: "get",
             async: true,
-            data: {'param1':'127inputTest'},
+            data: {'param1':inputValue},
             dataType: "json",
             timeout: 0,
             error: function () {
@@ -184,8 +122,6 @@
                             }
                             item_html += "<td>"+d["clients"]+"</td>";
                             item_html += "<td>"+d["produce_speed"]+"</td>";
-                            item_html += "<td>"+d["video"]+"</td>";
-                            item_html += "<td>"+d["audio"]+"</td>";
                             item_html += "<td><a class='sun-a-label'  href=\"/player?app="+d["app"]+"&name="+d["name"]+"\" >预览</a></td>";
                             item_html += "</tr>";
                         }
@@ -201,7 +137,7 @@
     }
 
     window.onload = function (){
-        getData();
+      loadAlgorithm();
     };
 
 

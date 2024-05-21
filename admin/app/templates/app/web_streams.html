@@ -38,10 +38,9 @@
                   <th class="column-title">来源 </th>
                   <th class="column-title">视频流 </th>
                   <th class="column-title">状态 </th>
-                  <th class="column-title">在线人数 </th>
                   <th class="column-title">入口带宽 </th>
-                  <th class="column-title">视频信息 </th>
-                  <th class="column-title">音频信息 </th>
+                  <th class="column-title">推流地址 </th>
+                  <th class="column-title">flv地址 </th>
                   <th class="column-title last"><span class="nobr">操作</span>
                   </th>
                 </tr>
@@ -117,10 +116,10 @@
                                }else{
                                    item_html += "<td><span class='sun-state-error'>离线</span></td>";
                                 }
-                               item_html += "<td>"+d["clients"]+"</td>";
+                               
                                item_html += "<td>"+d["produce_speed"]+"</td>";
-                               item_html += "<td>"+d["video"]+"</td>";
-                               item_html += "<td>"+d["audio"]+"</td>";
+                               item_html += "<td>"+d["originUrl"]+"</td>";    //推流地址
+                               item_html += "<td>"+d["flvUrl"]+"</td>";   //flv地址
                                item_html += "<td><a class='sun-a-label'  href=\"/player?app="+d["app"]+"&name="+d["name"]+"\" >预览</a></td>";
                                item_html += "</tr>";
                            }

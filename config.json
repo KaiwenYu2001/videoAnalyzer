@@ -5,7 +5,7 @@
   "algorithmPort": 8001,
   "mediaHttpPort": 80,
   "mediaRtspPort": 554,
-  "mediaSecret": "e7ZBtGr6i9KuuwqVGaJw4jVRxKXIh8Ws",
+  "mediaSecret": "acECc73G4EzqsYDmXxltclOnuvvEleNS",
   "rootDir": "D:\\Project\\bxc\\BXC_VideoAnalyzer_v3\\MediaServer\\release\\windows\\Release\\Release\\www",
   "videoFileNameFormat": "%Y%m%d%H%M%S",
   "recordLogInterval": 30,

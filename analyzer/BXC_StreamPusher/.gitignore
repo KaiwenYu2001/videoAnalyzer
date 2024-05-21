@@ -1,0 +1,15 @@
+﻿# clion
+.idea/
+cmake-build-debug/*
+build/*
+
+# vs
+.vs
+StreamPusher/x64/*
+x64/*
+debug/*
+data/*
+*.log
+
+
+

@@ -6,13 +6,13 @@ set(CMAKE_BUILD_TYPE "Debug")
 
 
 #设定头文件路径
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/libevent-master/include/)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/libevent-master/build/include/)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/jsoncpp/1.9.5/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/Ubuntu/libevent-2.1.12-stable/include/)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/Ubuntu/libevent-2.1.12-stable/build/include/)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/Ubuntu/jsoncpp/include)
 
 #设定链接库的路径（一般使用第三方非系统目录下的库）
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/libevent-master/build/lib)
-link_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/jsoncpp/1.9.5/lib)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/Ubuntu/libevent-2.1.12-stable/build/lib)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/Ubuntu/jsoncpp/lib)
 
 
  

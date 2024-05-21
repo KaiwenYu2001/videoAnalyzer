@@ -12,7 +12,7 @@ const int port = 8001;
 
 void test(evhttp_request *req, void *arg)
 {
-    std::string result_msg = "current service health";
+    std::string result_msg = "success";
     std::string streamUrl = "http:/127";
     int result_code = 1000;
 
@@ -32,9 +32,17 @@ void test(evhttp_request *req, void *arg)
 
     std::cout<< "copy print:" << buffer << std::endl;
     
+    Json::Value data;
+    Json::Value obj;
+    obj["active"] = true;
+    obj["flvUrl"] = "flvaddress";
+    data.append(obj);
+
     Json::Value result;
-    result["msg"] = result_msg;
     result["code"] = result_code;
+    result["msg"] = result_msg;
+    result["AlgorithmState"] = true;
+    result["data"] = data;
     result["streamUrl"] = streamUrl;
     evhttp_add_header(req->output_headers, "Content-Type", "application/json");
     evhttp_add_header(req->output_headers, "Connection", "close");
