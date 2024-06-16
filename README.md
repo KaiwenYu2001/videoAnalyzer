@@ -1,17 +1,91 @@
 # videoAnalyzer
 
-考虑到现在市场上服务器系统、个人电脑甚至嵌入式设备软件平台的多样性，在项目开发过程中我尽量使用C++来编写后端算法模块，由于C++提供了强大的标准库和丰富的第三方库支持，在开发高效、可靠的算法模块时，它的性能优势尤为显著。与此同时，C++语言的跨平台特性使得我们的项目能够在多种操作系统上编译和运行。为了简化不同平台上的编译和构建过程，我们使用了CMake作为项目的构建工具。CMake作为一款开源的、跨平台的构建系统，能够生成适用于特定平台的构建文件，如Makefile或Visual Studio工程文件。通过CMake，我们可以确保在不同操作系统上构建项目的一致性，从而降低了在不同环境下编译和部署的难度。此外，在此项目的部署引导开始前，建议系统环境中先准备CMake工具的配置，因为CMake作为跨平台的C语言编译服务不仅可以为项目代码的编译提供支持，并且在安装过程中也是必要的一部分。
+本项目的代码包含了基于Django的Web服务器的搭建，基于Yolov8和ByteTrack算法，在C++架构下实现并通过TensorRT与英伟达GPU加速的多目标跟踪算法，以及一套完整的基于FFmpeg模块开发的多媒体视频流拉流、推流以及编解码操作的后台处理框架。
 
-考虑到我的系统在代码开源后二次开发的可能性和多平台部署的潜力，在选择硬件配置中我参考了各个功能模块的主流厂家和硬件型号，作为我的开发测试环境，这可以帮我我的产品拥有更广阔的应用场景和更大的后续开发操作空间及扩展的可能性。 首先，由于本项目特点为基于英伟达GPU及TensorRT框架的硬件加速算法，所以我们需要在X64架构以及支持CUDA的英伟达显卡配置下的环境中运行项目。我在开发过程中的硬件和系统环境如表deviceInfo所示。
+## 声明
 
-此外，在我的开发过程中，需要运行英伟达开发库来进行硬件加速，同时流媒体处理和图像计算的功能需要多个系统底层以来来帮助实现。所以GPU对CUDA的支持，CnDNN算法库的安装以及TensorRT的配置都是必不可少的。考虑到模型转换环节和模型训练的需要，PyTorch也需要预先在系统环境中完成配置。在进行开发之前需要准备的系统配置和环境如下表\ref{tab:packageInfo}所示。
+项目前端界面源码来自 <https://gitee.com/Vanishi/BXC_VideoAnalyzer_v2>
 
-在系统中配置以上环境的过程中，我们需要先确定一个英伟达显卡驱动的版本，再按照找到与之相匹配的CUDA、CuDNN、PyTorch和TensorRT版本，在确定完成本机框架下各个组件之间当前版本可以互相调用且协作后，再按照优先安装英伟达CUDA及其相关库的步骤来完成安装。需要注意的是，在安装配置上述环境时通常需要结合其他依赖库的的安装（例如OpenSSL），所以具体安装流程还需要参考每个服务的开发者文档，并且在安装完成之后运行完整性测试。
+项目TensorRT加速框架部分来自 <https://github.com/wang-xinyu/tensorrtx>
 
-系统环境配置完成后即可从我的GitHub代码仓库克隆项目代码。代码分为三部分——Web服务器、后台算法模块和ZLMediakit流媒体服务框架。
+ByteTrack部分代码源自 <https://github.com/emptysoal/TensorRT-YOLOv8-ByteTrack> 
 
-首先，对于Ubuntu用户，如果系统环境与我的系统配置相同，则可以直接运行ZLMediakit流媒体服务器。对于系统环境不符合的用户，则需要访问ZLMediakit的官方代码仓库，下载自己系统版本的源代码并按照官方引导进行编译。在编译前需要记录config.ini中的密钥信息。编译完成后即可运行生成的可执行文件，某些情况下需要系统权限以运行。需要注意的是，运行ZLM服务，需要在运行ffmpeg推流命令前启动，否则会占用554端口。启动ZLM后会自动响应前端请求，生成相应格式的视频流。
+## 开发环境
 
-针对Web服务器，它的运行需要Python环境，并且需要安装requirements.txt文档中要求的外部库函数，这一步骤建议在虚拟环境中进行。在正式运行项目前还需要注意端口分配的问题。前端服务器的配置文件存储在服务器目录下的Config.json文件中，如果配置文件发生错误，将导致服务无法正常运行。默认运行端口为本机的8000端口。如果此端口被其他服务占用，用户可选择在运行manage.py时加上自己定义的端口或在系统中关闭其他进程。此外，其他端口的默认配置信息如下表\ref{tab:adminPortInfo}所示。
+本项目在Ubuntu上开发测试，如是Windows用户需要自行安装配置第三方依赖。本项目硬件加速部分的运行需要第三方依赖的安装和配置，本项目所使用的环境依赖如下：
 
-对于后端算法服务，及本项目代码中的Analyzer部分，需要先根据自己的系统情况修改CMakeLists。代码编译氛围两层，首先是用于生成TensorRT 引擎服务的部分，可以参考TensorRT部署章节。正常情况下，如果没有微调模型的需求，我们可以忽略这一步骤。对于整个后端算法的编译，我们仅需根据自己的系统环境目录修改系统头文件和链接库的安装目录，并且使用CMake编译生成可执行文件即可。同样，由于有些情况下会调用系统层的三方库，类Unix系统的用户需要加入sudo命令，Windows用户则需要使用管理员权限。
+|  开发依赖 | 版本 | 开发依赖 | 版本 |
+|  ----  | ----  | ----  | ----  |
+| CUDA  | 11.8 |PyTorch  | 2.3.0 |
+| CuDNN  | 8.0.5 | CMake  | 3.22.1 |
+| TensorRT  | 8.6.1 | OpenCV  | 4.9.0 |
+
+## 项目部署
+
+### 前端服务部署
+
+首先创建并激活虚拟环境
+
+```bash
+$ virtualenv venv
+$ source ./venv/bin/activate
+```
+
+在虚拟环境中安装运行Django所需要的依赖
+
+```bash
+$ pip install -r admin/requirements.txt
+```
+
+在虚拟环境中启动Django服务，默认端口为8000。
+
+```bash
+$ python admin/manage.py runserver
+```
+命令运行成功后可以看到窗口打印输出服务器运行信息。在浏览器中访问 <http://127.0.0.1:8000/> 即可进入用户界面。
+
+### 流媒体服务框架安装
+
+首先需要为设备安装ffmpeg插件。Ubuntu中可以使用 `sudo apt install ffmpeg` 安装并通过 `ffmpeg -version` 来确认安装。如果下载过慢可将apt源更换为清华镜像。Windows用户请参照 <https://blog.csdn.net/bby1987/article/details/125562773>  
+
+第二步为安装ZLMediakit作为流媒体转发框架。请参照<https://github.com/ZLMediaKit/ZLMediaKit> 编译安装。编译完成后，请在ZLMediakit的release目录中找到“config.ini”配置文件并复制密钥到本项目中的“config.json”。
+
+运行测试时，我们必须在启动FFmpeg服务之前启动ZLMediakit。因为FFMpeg会占用443端口，导致ZLM框架启动失败。
+
+启动ZLMediaserver：通过在用户自己的ZLMediakit的安装目录中启动ZLMediakit。可通过加入sudo命令来调用系统的第三方库。如在本项目中，在命令行窗口中执行：
+
+```bash
+$ sudo ./MediaServer
+```
+
+测试FFmpeg推流效果：在 `data` 目录中开启一个新的命令行窗口，执行：
+
+```bash
+$ sudo ffmpeg -re -stream_loop -1  -i test.mp4  -rtsp_transport tcp -c copy -f rtsp rtsp://127.0.0.1:9554/live/test
+```
+
+如果正常运行，那么可以看到ZLM服务窗口中打印的信息，并且可以在前端窗口的流媒体管理界面中看到视频流管理中打印出的流媒体信息。
+
+### 后端算法部署
+
+注：后端服务在搭建视频推流模块时遇到障碍，问题源于OpenCV和FFmpeg格式的不统一。所以现在后端代码分为两部分，Libevent测试框架和TensorRT-ByteTrack测试框架。开源代码中将两部分分开，需要开发者自行拓展功能。
+
+首先部署Libevent框架用于交互。
+
+```bash
+# 切换到算法目录
+$ cd analyzer
+
+# 创建build文件夹并且进入
+$ mkdir build
+$ cd build
+
+# 编译运行，加上sudo用于引用系统库
+$ sudo cmake ..
+$ sudo make
+```
+
+编译成功后，用 `sudo ./main` 命令可以运行后台进程。  
+
+视频推理系统编译测试：位于 `TensorRT-YOLOv8-ByteTrack` 目录下，请参照 `TensorRT-YOLOv8-ByteTrack/README.md` 中的引导编译测试。  
+

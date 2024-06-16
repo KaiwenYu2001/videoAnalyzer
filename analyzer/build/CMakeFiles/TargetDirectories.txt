@@ -1,3 +1,0 @@
-/home/kaiwenyu/Desktop/graduateProject/git/videoAnalyzer/analyzer/build/CMakeFiles/main.dir
-/home/kaiwenyu/Desktop/graduateProject/git/videoAnalyzer/analyzer/build/CMakeFiles/edit_cache.dir
-/home/kaiwenyu/Desktop/graduateProject/git/videoAnalyzer/analyzer/build/CMakeFiles/rebuild_cache.dir
